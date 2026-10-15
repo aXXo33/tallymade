@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tallymade — Handmade Pricing</title>
+<meta name="description" content="Cost your recipes by weight, add your time, and see the price that still leaves you a profit after Etsy, market or card-reader fees. For candle, soap, bake and craft makers.">
+<meta property="og:title" content="Tallymade — know what every piece really earns">
+<meta property="og:description" content="A pricing app for makers: recipe costing, your time, and Etsy/card-reader fees in one price.">
+<meta property="og:image" content="icon.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="icon.png">
+<style>
+  :root{--paper:#FBF6EE;--card:#fff;--sunken:#F3EADC;--line:#E6DACA;--ink:#211B16;--soft:#5E544B;--accent:#B5651D;--accent-dark:#8E4C12;--accent-soft:#F6E3CD;--profit:#2E7D4F;--loss:#B3261E}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(2.1rem,5vw,3.4rem)} h2{font-size:clamp(1.6rem,3.5vw,2.2rem)} h3{font-size:1.2rem}
+  p{margin:0 0 1em;color:var(--soft)}
+  a{color:var(--accent-dark)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header.top{display:flex;align-items:center;gap:10px;padding:18px 0}
+  header.top img{width:40px;height:40px;border-radius:10px}
+  header.top b{font-family:Georgia,serif;font-size:1.25rem}
+  header.top nav{margin-left:auto;display:flex;gap:18px;font-size:.95rem}
+  header.top nav a{text-decoration:none;color:var(--soft)}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:40px 0 64px}
+  .eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:700;color:var(--accent-dark);text-transform:uppercase}
+  .lead{font-size:1.15rem}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:12px}
+  .btn:hover{background:var(--accent-dark)}
+  .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .note{font-size:.9rem;color:var(--soft);margin-top:12px}
+  .phone{background:var(--ink);color:#fff;border-radius:28px;padding:22px;box-shadow:0 20px 50px rgba(33,27,22,.18)}
+  .phone .label{font-size:.72rem;letter-spacing:.08em;color:#D9CBB8;font-weight:700}
+  .phone .price{font-family:Georgia,serif;font-size:2.6rem;font-weight:700;margin:4px 0 10px}
+  .row{display:flex;justify-content:space-between;gap:12px;font-size:.95rem;padding:3px 0}
+  .row span:first-child{color:#D9CBB8}
+  .check{background:var(--card);color:var(--ink);border-radius:16px;padding:14px;margin-top:14px}
+  .check .row span:first-child{color:var(--soft)}
+  .warn{background:#FFF1CC;color:#8A5A00;border-radius:10px;padding:8px 10px;font-size:.85rem;margin-top:8px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .step{font-family:Georgia,serif;font-weight:700;color:var(--accent);font-size:1.6rem}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+  td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.total td{font-weight:700;border-bottom:2px solid var(--ink)}
+  .good{color:var(--profit);font-weight:700} .bad{color:var(--loss);font-weight:700}
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .plan ul{padding-left:1.1em;margin:0 0 .5em} .plan li{margin:.3em 0}
+  .plan.pro{border:2px solid var(--accent);background:var(--accent-soft)}
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:700}
+  details p{margin:.6em 0 0}
+  .cta{text-align:center}
+  footer{padding:32px 0 48px;font-size:.9rem;color:var(--soft);border-top:1px solid var(--line)}
+  footer a{margin-right:16px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media (max-width:820px){.hero,.grid3,.plans{grid-template-columns:1fr}.hero{padding-top:16px}header.top nav{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="icon.png" alt="Tallymade logo: a price tag with a tally mark">
+    <b>Tallymade</b>
+    <nav aria-label="Page sections"><a href="#how">How it works</a><a href="#example">Example</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Pricing for makers</div>
+        <h1>Know what every piece really earns.</h1>
+        <p class="lead">Cost your recipes by weight, add your time, and see the price that still leaves you a profit after Etsy, market or card-reader fees.</p>
+        <a class="btn" href="mailto:primequantumstudios@gmail.com?subject=Tallymade%20early%20access">Tell me when it's live</a>
+        <p class="note">Coming soon to the App Store and Google Play. Free for your first 3 products — no account needed.</p>
+      </div>
+      <div class="phone" role="img" aria-label="Example app screen: suggested price $11.00 on Etsy for an 8 oz soy candle; at $8 the profit is only $0.76">
+        <div class="label">SUGGESTED PRICE · ETSY (US SELLER)</div>
+        <div class="price">$11.00</div>
+        <div class="row"><span>Costs you to make</span><span>$6.03</span></div>
+        <div class="row"><span>Fees on this price</span><span>$1.49</span></div>
+        <div class="row"><span>Profit (31.6%)</span><span><b>$3.48</b></span></div>
+        <div class="check">
+          <div class="row"><span>What you charge now</span><span>$8.00</span></div>
+          <div class="row"><span>Profit</span><span class="good">+$0.76</span></div>
+          <div class="warn">Below your 30% target. $11.00 would hit it.</div>
+        </div>
+      </div>
+    </div>
+
+    <section aria-labelledby="problem">
+      <h2 id="problem">The price you guessed is missing two costs.</h2>
+      <div class="grid3">
+        <div class="card"><h3>Your time</h3><p>Pouring, curing, packing and listing are work. If your time isn't in the cost, you're paying for the business with it.</p></div>
+        <div class="card"><h3>The fees</h3><p>Transaction, processing and listing fees come out of every sale. A price that covers your supplies can still leave almost nothing.</p></div>
+        <div class="card"><h3>Batch maths</h3><p>You buy wax by the pound and fragrance by the ounce, then pour a dozen at once. Splitting that per candle by hand is where mistakes creep in.</p></div>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-h">
+      <h2 id="how-h">How it works</h2>
+      <div class="grid3">
+        <div class="card"><div class="step">1</div><h3>Add your supplies</h3><p>Enter what you paid and how much you got. Tallymade works out the cost per gram, ounce, millilitre or piece.</p></div>
+        <div class="card"><div class="step">2</div><h3>Build the batch</h3><p>Add each ingredient by amount or as a percentage of another — like an 8% fragrance load — plus your hands-on minutes.</p></div>
+        <div class="card"><div class="step">3</div><h3>Pick where you sell</h3><p>Etsy (US/UK), Square card readers and cash are built in, each with its source and date. Get the price that keeps your profit target.</p></div>
+      </div>
+    </section>
+
+    <section id="example" aria-labelledby="ex-h">
+      <h2 id="ex-h">A worked example: 12 soy candles</h2>
+      <p>Example supply prices — use your own in the app.</p>
+      <div class="card">
+        <table>
+          <thead><tr><th>Item</th><th>Bought</th><th>Used per batch</th><th class="n">Cost</th></tr></thead>
+          <tbody>
+            <tr><td>Soy wax</td><td>$30 / 10 lb</td><td>72 oz</td><td class="n">$13.50</td></tr>
+            <tr><td>Fragrance oil</td><td>$20 / 16 oz</td><td>8% of wax = 5.76 oz</td><td class="n">$7.20</td></tr>
+            <tr><td>8 oz jars with lids</td><td>$24 / 12</td><td>12</td><td class="n">$24.00</td></tr>
+            <tr><td>Cotton wicks</td><td>$8 / 100</td><td>12</td><td class="n">$0.96</td></tr>
+            <tr class="total"><td colspan="3">Materials per candle ($45.66 ÷ 12)</td><td class="n">$3.81</td></tr>
+            <tr><td colspan="3">Your time: 90 min ÷ 12 at $15/h</td><td class="n">$1.88</td></tr>
+            <tr><td colspan="3">Labels &amp; care card</td><td class="n">$0.35</td></tr>
+            <tr class="total"><td colspan="3">Cost per candle</td><td class="n">$6.03</td></tr>
+            <tr><td colspan="3">Profit selling at $8 on Etsy (US)</td><td class="n bad">$0.76</td></tr>
+            <tr><td colspan="3">Price for a 30% profit after Etsy fees</td><td class="n good">$11.00</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Per-candle figures are rounded for display; the app calculates with exact values. Etsy US fees used: 6.5% transaction, 3% + $0.25 processing, $0.20 listing renewal — from Etsy's published fee pages, checked 15 Oct 2026. Offsite Ads and fees on postage are not included.</p>
+      </div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pr-h">
+      <h2 id="pr-h">Pricing</h2>
+      <div class="plans">
+        <div class="card plan">
+          <h3>Free</h3>
+          <ul>
+            <li>Up to 3 products, unlimited materials</li>
+            <li>Etsy, Square and cash fee presets + 1 custom channel</li>
+            <li>Suggested price and "check your price"</li>
+            <li>Backup and restore</li>
+          </ul>
+        </div>
+        <div class="card plan pro">
+          <h3>Pro — monthly or yearly</h3>
+          <ul>
+            <li>Unlimited products and custom channels</li>
+            <li>Compare channels side by side</li>
+            <li>PDF price list and CSV export</li>
+          </ul>
+          <p class="note">Billed by the App Store or Google Play; prices shown in the app. Cancel any time in your store account.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions</h2>
+      <details><summary>Do I need an account?</summary><p>No. Your materials and products are stored only on your phone. There's no sign-up.</p></details>
+      <details><summary>What if I change phones?</summary><p>Export a backup file from Settings and restore it on the new phone. Tallymade doesn't keep a copy on a server.</p></details>
+      <details><summary>Which fees are included?</summary><p>Presets for Etsy (US and UK sellers), Square card readers (US and UK) and cash. Each shows its source and the date it was checked. Every fee line is editable, and you can add your own channels.</p></details>
+      <details><summary>Why isn't TikTok Shop built in?</summary><p>Its published rates vary by category and region, so we couldn't confirm one set of numbers. Add it as your own channel using the rates in your seller account.</p></details>
+      <details><summary>Which currencies work?</summary><p>USD, GBP, EUR, CAD and AUD. Pick the currency you sell in; Tallymade doesn't convert between currencies.</p></details>
+      <details><summary>Can I mix weight and volume?</summary><p>Yes — add a density (grams per ml from your supplier's data sheet) to a material.</p></details>
+      <details><summary>How do I cancel Pro?</summary><p>Pro is billed by Apple or Google. Cancel in your store account's subscription settings; refunds are requested through the store.</p></details>
+      <details><summary>Is this tax or accounting advice?</summary><p>No. Tallymade is a pricing calculator. For tax and bookkeeping, talk to an accountant.</p></details>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-h">
+      <h2 id="cta-h">Price your next batch properly.</h2>
+      <p>Tallymade is coming soon to the App Store and Google Play.</p>
+      <a class="btn" href="mailto:primequantumstudios@gmail.com?subject=Tallymade%20early%20access">Email me when it's live</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <span>© 2026 Prime Quantum Studios</span>
+  </footer>
+</div>
+</body>
+</html>
