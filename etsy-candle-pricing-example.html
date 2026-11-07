@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Etsy's fees change the price of a candle (worked example) — Tallymade</title>
+<meta name="description" content="One batch of 12 soy candles worked through line by line: materials, your time, Etsy's fees (US and UK), and the price that keeps a 30% profit.">
+<meta property="og:title" content="How Etsy's fees change the price of a candle">
+<meta property="og:description" content="$6.03 to make, $8 keeps 76¢ after Etsy fees, $11 keeps 30%. The full worked example, with Etsy's sources.">
+<meta property="og:image" content="icon.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="icon.png">
+<style>
+  :root{--paper:#FBF6EE;--card:#fff;--sunken:#F3EADC;--line:#E6DACA;--ink:#211B16;--soft:#5E544B;--accent:#B5651D;--accent-dark:#8E4C12;--accent-soft:#F6E3CD;--profit:#2E7D4F;--loss:#B3261E}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(2rem,4.6vw,3rem)} h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-top:1.6em}
+  p,li{color:var(--soft)} p{margin:0 0 1em}
+  strong{color:var(--ink)}
+  a{color:var(--accent-dark)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header.top{display:flex;align-items:center;gap:10px;padding:18px 0}
+  header.top img{width:40px;height:40px;border-radius:10px}
+  header.top b{font-family:Georgia,serif;font-size:1.25rem}
+  header.top a.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  article{max-width:720px;margin:0 auto;padding:24px 0 56px}
+  .eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:700;color:var(--accent-dark);text-transform:uppercase}
+  .lead{font-size:1.15rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:0 0 1.2em}
+  .formula{font-family:Georgia,serif;font-size:1.1rem;color:var(--ink);background:var(--sunken);border-radius:12px;padding:12px 16px;margin:0 0 1em}
+  .src{font-size:.85rem;color:var(--soft);display:block;margin-top:.25em}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+  td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.total td{font-weight:700;border-bottom:2px solid var(--ink);color:var(--ink)}
+  .good{color:var(--profit);font-weight:700} .bad{color:var(--loss);font-weight:700}
+  ul.fees{padding-left:1.1em} ul.fees li{margin:.6em 0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:12px}
+  .btn:hover{background:var(--accent-dark)}
+  .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .stores{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 1em}
+  .note{font-size:.9rem;color:var(--soft)}
+  footer{padding:32px 0 48px;font-size:.9rem;color:var(--soft);border-top:1px solid var(--line)}
+  footer a{margin-right:16px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="./"><img src="icon.png" alt="Tallymade logo: a price tag with a tally mark"><b>Tallymade</b></a>
+  </header>
+
+  <main>
+  <article>
+    <div class="eyebrow">Worked example · Etsy fees checked 7 Nov 2026</div>
+    <h1>How Etsy's fees change the price of a candle</h1>
+    <p class="lead">Most candle pricing advice says "double your costs". That skips two things that quietly eat your profit: your own time, and the platform's cut. Here is one batch of candles worked through line by line, so you can see where the money goes. Swap in your own numbers as you read.</p>
+
+    <h2>The batch: 12 jar candles (example figures)</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Item</th><th>Bought</th><th>Used per batch</th><th class="n">Cost</th></tr></thead>
+        <tbody>
+          <tr><td>Soy wax</td><td>$30 / 10 lb ($3.00 per lb)</td><td>72 oz (4.5 lb)</td><td class="n">$13.50</td></tr>
+          <tr><td>Fragrance oil</td><td>$20 / 16 oz ($1.25 per oz)</td><td>8% of wax = 5.76 oz</td><td class="n">$7.20</td></tr>
+          <tr><td>Jars with lids</td><td>$24 / 12</td><td>12</td><td class="n">$24.00</td></tr>
+          <tr><td>Cotton wicks</td><td>$8 / 100</td><td>12</td><td class="n">$0.96</td></tr>
+          <tr class="total"><td colspan="3">Materials for the batch</td><td class="n">$45.66</td></tr>
+          <tr><td colspan="3">Materials per candle ($45.66 ÷ 12)</td><td class="n">$3.805</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Your time is a cost too</h2>
+    <p>Say the batch takes 90 minutes of hands-on work. That is 7.5 minutes per candle. At $15 an hour, that is <strong>$1.875 per candle</strong>. Add $0.35 per candle for labels and a care card.</p>
+    <p class="formula">Cost to make one candle: $3.805 + $1.875 + $0.35 = <strong>$6.03</strong></p>
+    <p>If you leave your time out, you are pricing as if your hours are free. They aren't. If you ever pay someone to help, that wage has to come from somewhere.</p>
+
+    <h2>What Etsy takes (US seller)</h2>
+    <p>For a seller whose bank account is in the US, each sale carries three charges.</p>
+    <ul class="fees">
+      <li><strong>Transaction fee: 6.5%</strong> of the order amount, including what you charge for postage and gift wrap.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-us/articles/360035902374-Etsy-Fee-Basics">Etsy Fee Basics</a>. Checked 7 Nov 2026.</span></li>
+      <li><strong>Payment processing: 3% + $0.25</strong> per order, taken from the total sale price including postage and any sales tax.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/115015628847">What are Payment Processing Fees for Selling on Etsy?</a> (United States: 3% + 0.25 USD). Checked 7 Nov 2026.</span></li>
+      <li><strong>Listing fee: $0.20.</strong> Charged when you list an item, and again when a listing set to auto-renew sells, or for each extra item bought from a multi-quantity listing.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-us/articles/360035902374-Etsy-Fee-Basics">Etsy Fee Basics</a>. Checked 7 Nov 2026.</span></li>
+    </ul>
+    <p>Some sales also carry an <strong>Offsite Ads fee: 15%</strong>, or 12% if your shop has ever made $10,000 or more in any 365-day period. It applies only to orders Etsy attributes to one of its ads on another site, and it never exceeds $100 per order.
+      <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/360000338367">How Etsy's Offsite Ads Work</a>. Checked 7 Nov 2026.</span></p>
+    <p>To keep the arithmetic simple, the example below assumes free shipping (postage built into the price), no Offsite Ads sale, and leaves sales tax out.</p>
+
+    <h2>What $8 actually earns</h2>
+    <div class="card">
+      <table>
+        <tbody>
+          <tr><td>Transaction fee: 6.5% × $8</td><td class="n">$0.52</td></tr>
+          <tr><td>Processing: 3% × $8 + $0.25</td><td class="n">$0.49</td></tr>
+          <tr><td>Listing renewal</td><td class="n">$0.20</td></tr>
+          <tr class="total"><td>Fees</td><td class="n">$1.21</td></tr>
+          <tr><td>Profit: $8 − $1.21 − $6.03</td><td class="n bad">$0.76</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>That is about 9.5% of the price. The 76¢ is <em>on top of</em> paying yourself $15 an hour. Count your wage and the profit together and the candle pays you about <strong>$21 per hour</strong> of hands-on time ($2.635 per 7.5 minutes). That figure ignores the time spent photographing, listing, packing and posting.</p>
+
+    <h2>The price that keeps a 30% profit</h2>
+    <p>Say you want 30% of the price left over after fees and costs. Because Etsy's percentages come off the <em>price</em>, you can't simply add 30% to your cost. You solve for the price instead:</p>
+    <p class="formula">price = (cost + fixed fees) ÷ (1 − fee percentages − target margin)</p>
+    <p>Here the fixed fees are $0.25 + $0.20 = $0.45, and the fee percentages are 6.5% + 3% = 9.5%:</p>
+    <p class="formula">($6.03 + $0.45) ÷ (1 − 0.095 − 0.30) = $6.48 ÷ 0.605 = <strong>$10.71</strong></p>
+    <p>Round <strong>up</strong>, never down, to <strong>$11.00</strong>. At $11, fees come to about $1.50 and you keep <strong class="good">$3.48 per candle (about 32%)</strong>. Your wage plus profit then works out at about <strong>$42.80 per hour</strong> of hands-on time.</p>
+    <p>The gap between $8 and $11 isn't greed. It is fees plus a fair wage.</p>
+
+    <h2>Selling from the UK?</h2>
+    <p>The structure is the same, but the numbers differ:</p>
+    <ul class="fees">
+      <li><strong>Transaction fee: 6.5%</strong> of the order amount, including postage and gift wrap.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/115014483627">What are the Fees and Taxes for Selling on Etsy?</a> Checked 7 Nov 2026.</span></li>
+      <li><strong>Payment processing: 4% + £0.20</strong> per order.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/115015628847">What are Payment Processing Fees for Selling on Etsy?</a> (United Kingdom: 4% + 0.20 GBP). Checked 7 Nov 2026.</span></li>
+      <li><strong>Regulatory Operating fee: 0.48%</strong> of the item price plus postage and gift wrap.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/1500011073202-What-is-a-Regulatory-Operating-Fee">What is a Regulatory Operating Fee?</a> Checked 7 Nov 2026.</span></li>
+      <li><strong>Listing fee: 0.20 USD</strong>, converted to pounds at the market rate when it is charged, so the pound amount moves with the exchange rate.
+        <span class="src">Source: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/115014483627">What are the Fees and Taxes for Selling on Etsy?</a> Checked 7 Nov 2026.</span></li>
+      <li><strong>VAT on Etsy's fees.</strong> If you are a UK seller and haven't given Etsy a VAT ID, Etsy adds VAT to your seller fees. If you have given one, it doesn't. The UK standard rate is 20%.
+        <span class="src">Sources: Etsy Help, <a href="https://help.etsy.com/hc/en-gb/articles/360040584433-How-VAT-Is-Collected-on-Seller-Fees">How VAT Is Collected on Seller Fees</a>; GOV.UK, <a href="https://www.gov.uk/vat-rates">VAT rates</a>. Checked 7 Nov 2026.</span></li>
+    </ul>
+    <p>On an £11 candle, the percentage fees (6.5% + 4% + 0.48%) plus the 20p come to about <strong>£1.41</strong>. If you have no VAT ID, 20% VAT on those fees takes that to about <strong>£1.69</strong>, before the listing fee. Your own Etsy statement is the final word.</p>
+
+    <h2>Do it for your own products</h2>
+    <p>Write down what each supply cost and how much of it one batch uses. Add your time and the small extras. Then solve for the price with the formula above.</p>
+    <p>If you'd rather not keep a spreadsheet, Tallymade does this calculation for each product and re-prices everything when a supply cost changes. Its Etsy UK preset doesn't add VAT on fees yet, so if you have no VAT ID, edit the fee lines to allow for that 20%.</p>
+    <div class="stores">
+      <a class="btn" href="https://apps.apple.com/gb/app/tallymade-handmade-pricing/id6823324719">Download on the App Store</a>
+      <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade">Get it on Google Play</a>
+    </div>
+    <p class="note">This is a pricing example, not tax or accounting advice. The candle figures are examples. Fees change: check Etsy's fee pages before you rely on any number here.</p>
+  </article>
+  </main>
+
+  <footer>
+    <a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <span>© 2026 Prime Quantum Studios</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -30,6 +30,8 @@
   .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:12px}
   .btn:hover{background:var(--accent-dark)}
   .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .stores{display:flex;flex-wrap:wrap;gap:10px}
+  section.cta .stores{justify-content:center}
   .note{font-size:.9rem;color:var(--soft);margin-top:12px}
   .phone{background:var(--ink);color:#fff;border-radius:28px;padding:22px;box-shadow:0 20px 50px rgba(33,27,22,.18)}
   .phone .label{font-size:.72rem;letter-spacing:.08em;color:#D9CBB8;font-weight:700}
@@ -75,8 +77,11 @@
         <div class="eyebrow">Pricing for makers</div>
         <h1>Know what every piece really earns.</h1>
         <p class="lead">Cost your recipes by weight, add your time, and see the price that still leaves you a profit after Etsy, market or card-reader fees.</p>
-        <a class="btn" href="mailto:primequantumstudios@gmail.com?subject=Tallymade%20early%20access">Tell me when it's live</a>
-        <p class="note">Coming soon to the App Store and Google Play. Free for your first 3 products — no account needed.</p>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/gb/app/tallymade-handmade-pricing/id6823324719">Download on the App Store</a>
+          <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade">Get it on Google Play</a>
+        </div>
+        <p class="note">Free for your first 3 products — no account needed.</p>
       </div>
       <div class="phone" role="img" aria-label="Example app screen: suggested price $11.00 on Etsy for an 8 oz soy candle; at $8 the profit is only $0.76">
         <div class="label">SUGGESTED PRICE · ETSY (US SELLER)</div>
@@ -129,7 +134,7 @@
             <tr><td colspan="3">Price for a 30% profit after Etsy fees</td><td class="n good">$11.00</td></tr>
           </tbody>
         </table>
-        <p class="note">Per-candle figures are rounded for display; the app calculates with exact values. Etsy US fees used: 6.5% transaction, 3% + $0.25 processing, $0.20 listing renewal — from Etsy's published fee pages, checked 15 Oct 2026. Offsite Ads and fees on postage are not included.</p>
+        <p class="note">Per-candle figures are rounded for display; the app calculates with exact values. Etsy US fees used: 6.5% transaction, 3% + $0.25 processing, $0.20 listing renewal — from Etsy's published fee pages, checked 7 Nov 2026. Offsite Ads and fees on postage are not included. <a href="etsy-candle-pricing-example.html">See the full worked example, with Etsy's sources and the UK fees</a>.</p>
       </div>
     </section>
 
@@ -171,8 +176,11 @@
 
     <section class="cta" aria-labelledby="cta-h">
       <h2 id="cta-h">Price your next batch properly.</h2>
-      <p>Tallymade is coming soon to the App Store and Google Play.</p>
-      <a class="btn" href="mailto:primequantumstudios@gmail.com?subject=Tallymade%20early%20access">Email me when it's live</a>
+      <p>Tallymade is on the App Store and Google Play.</p>
+      <div class="stores">
+        <a class="btn" href="https://apps.apple.com/gb/app/tallymade-handmade-pricing/id6823324719">Download on the App Store</a>
+        <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade">Get it on Google Play</a>
+      </div>
     </section>
   </main>
 
