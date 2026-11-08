@@ -7,14 +7,18 @@
 <meta name="description" content="One batch of 12 soy candles worked through line by line: materials, your time, Etsy's fees (US and UK), and the price that keeps a 30% profit.">
 <meta property="og:title" content="How Etsy's fees change the price of a candle">
 <meta property="og:description" content="$6.03 to make (including a $15/hour wage). At $8 you keep 76¢ after Etsy fees; at $11 about 32%. The full worked example, with Etsy's sources.">
-<meta property="og:image" content="https://axxo33.github.io/tallymade/icon.png">
+<meta property="og:image" content="https://tallymade.app/assets/og.png">
+<link rel="canonical" href="https://tallymade.app/etsy-candle-pricing-example.html">
 <meta property="og:type" content="article">
-<link rel="icon" href="icon.png">
+<link rel="icon" href="assets/favicon-64.png" type="image/png">
 <style>
-  :root{--paper:#FBF6EE;--card:#fff;--sunken:#F3EADC;--line:#E6DACA;--ink:#211B16;--soft:#5E544B;--accent:#B5651D;--accent-dark:#8E4C12;--accent-soft:#F6E3CD;--profit:#2E7D4F;--loss:#B3261E}
+  @font-face{font-family:Fraunces;src:url(assets/fraunces-700.woff2) format("woff2");font-weight:700;font-display:swap}
+  @font-face{font-family:Inter;src:url(assets/inter-400.woff2) format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:Inter;src:url(assets/inter-700.woff2) format("woff2");font-weight:700;font-display:swap}
+  :root{--paper:#F4EEE2;--card:#FBF8F2;--sunken:#ECE4D4;--line:#E2D7C4;--ink:#2A2520;--soft:#5F574C;--accent:#B5532F;--accent-dark:#933F21;--accent-soft:#F3DFD3;--profit:#3F7A3E;--loss:#A8322A}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:700;line-height:1.15;margin:0 0 .5em}
   h1{font-size:clamp(2rem,4.6vw,3rem)} h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-top:1.6em}
   p,li{color:var(--soft)} p{margin:0 0 1em}
   strong{color:var(--ink)}
@@ -22,13 +26,13 @@
   .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
   header.top{display:flex;align-items:center;gap:10px;padding:18px 0}
   header.top img{width:40px;height:40px;border-radius:10px}
-  header.top b{font-family:Georgia,serif;font-size:1.25rem}
+  header.top b{font-family:Fraunces,Georgia,serif;font-size:1.25rem}
   header.top a.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
   article{max-width:720px;margin:0 auto;padding:24px 0 56px}
   .eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:700;color:var(--accent-dark);text-transform:uppercase}
   .lead{font-size:1.15rem}
   .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:0 0 1.2em}
-  .formula{font-family:Georgia,serif;font-size:1.1rem;color:var(--ink);background:var(--sunken);border-radius:12px;padding:12px 16px;margin:0 0 1em}
+  .formula{font-family:Fraunces,Georgia,serif;font-size:1.1rem;color:var(--ink);background:var(--sunken);border-radius:12px;padding:12px 16px;margin:0 0 1em}
   .src{font-size:.85rem;color:var(--soft);display:block;margin-top:.25em}
   table{width:100%;border-collapse:collapse;font-size:.95rem}
   td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
@@ -36,7 +40,7 @@
   tr.total td{font-weight:700;border-bottom:2px solid var(--ink);color:var(--ink)}
   .good{color:var(--profit);font-weight:700} .bad{color:var(--loss);font-weight:700}
   ul.fees{padding-left:1.1em} ul.fees li{margin:.6em 0}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:12px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:999px}
   .btn:hover{background:var(--accent-dark)}
   .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
   .stores{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 1em}
