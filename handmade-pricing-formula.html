@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handmade Pricing Formula: Materials, Time and Fees (Worked Example) — Tallymade</title>
+<meta name="description" content="A pricing formula for handmade products that counts your time and takes marketplace fees off the price, not the cost. Worked through for a bar of soap sold on Etsy UK, with why 'materials × 3' can lose money.">
+<link rel="canonical" href="https://tallymade.app/handmade-pricing-formula.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Tallymade">
+<meta property="og:url" content="https://tallymade.app/handmade-pricing-formula.html">
+<meta property="og:title" content="The handmade pricing formula that survives marketplace fees">
+<meta property="og:description" content="Materials, your time, overhead, then solve for the price so fees and profit both fit. A £5.00 soap bar needs £9.50 on Etsy UK to keep 30%.">
+<meta property="og:image" content="https://tallymade.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tallymade.app/assets/og.png">
+<link rel="icon" href="assets/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The handmade pricing formula that survives marketplace fees","description":"How to price a handmade product: materials, your time, overhead, and solving for the price so marketplace fees and your profit both fit. Worked example with Etsy UK fees checked 11 November 2026.","datePublished":"2026-11-11","dateModified":"2026-11-11","inLanguage":"en-GB","mainEntityOfPage":"https://tallymade.app/handmade-pricing-formula.html","image":"https://tallymade.app/assets/og.png","author":{"@type":"Organization","name":"Prime Quantum Studios","url":"https://tallymade.app/"},"publisher":{"@type":"Organization","name":"Prime Quantum Studios","logo":{"@type":"ImageObject","url":"https://tallymade.app/assets/icon-512.png"}}}</script>
+<style>
+  @font-face{font-family:Fraunces;src:url(assets/fraunces-700.woff2) format("woff2");font-weight:700;font-display:swap}
+  @font-face{font-family:Inter;src:url(assets/inter-400.woff2) format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:Inter;src:url(assets/inter-700.woff2) format("woff2");font-weight:700;font-display:swap}
+  :root{--paper:#F4EEE2;--card:#FBF8F2;--sunken:#ECE4D4;--line:#E2D7C4;--ink:#2A2520;--soft:#5F574C;--accent:#B5532F;--accent-dark:#933F21;--accent-soft:#F3DFD3;--profit:#3F7A3E;--loss:#A8322A}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:700;line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(2rem,4.6vw,3rem)} h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-top:1.6em}
+  p,li{color:var(--soft)} p{margin:0 0 1em}
+  strong{color:var(--ink)}
+  a{color:var(--accent-dark)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header.top{display:flex;align-items:center;gap:10px;padding:18px 0}
+  header.top img{width:40px;height:40px;border-radius:10px}
+  header.top b{font-family:Fraunces,Georgia,serif;font-size:1.25rem}
+  header.top a.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  article{max-width:720px;margin:0 auto;padding:24px 0 56px}
+  .eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:700;color:var(--accent-dark);text-transform:uppercase}
+  .lead{font-size:1.15rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:0 0 1.2em;overflow-x:auto}
+  .formula{font-family:Fraunces,Georgia,serif;font-size:1.1rem;color:var(--ink);background:var(--sunken);border-radius:12px;padding:12px 16px;margin:0 0 1em}
+  .src{font-size:.85rem;color:var(--soft);display:block;margin-top:.25em}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+  td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.total td{font-weight:700;border-bottom:2px solid var(--ink);color:var(--ink)}
+  .good{color:var(--profit);font-weight:700} .bad{color:var(--loss);font-weight:700}
+  ol.steps{padding-left:1.3em} ol.steps li{margin:.6em 0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:999px}
+  .btn:hover{background:var(--accent-dark)}
+  .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .stores{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 1em}
+  .note{font-size:.9rem;color:var(--soft)}
+  footer{padding:32px 0 48px;font-size:.9rem;color:var(--soft);border-top:1px solid var(--line)}
+  footer a{margin-right:16px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="./"><img src="icon.png" alt="Tallymade logo: a price tag with a tally mark"><b>Tallymade</b></a>
+  </header>
+
+  <main>
+  <article>
+    <div class="eyebrow">Pricing guide · Etsy UK fees checked 11 Nov 2026</div>
+    <h1>The handmade pricing formula that survives marketplace fees</h1>
+    <p class="lead">Most pricing advice for makers is a multiplier: materials × 2, × 3, add a bit for your time. Multipliers are quick, but they hide the two things that decide whether a sale pays you: what your hours are worth, and the share the marketplace takes from the price. This is the longer version, worked through for one bar of soap.</p>
+
+    <h2>The formula</h2>
+    <ol class="steps">
+      <li><strong>Materials per item.</strong> For each supply: what you paid ÷ how much you bought × how much one batch uses. Add the lines up and divide by the number of items in the batch.</li>
+      <li><strong>Your time per item.</strong> Hands-on minutes for the batch ÷ items × your hourly rate. Pick the rate you would have to pay someone else to do it, not zero.</li>
+      <li><strong>Overhead per item.</strong> A share of the things that wear out or get used up without being in the product: moulds, scales, electricity, packaging you don't count elsewhere.</li>
+      <li><strong>Solve for the price</strong>, so the fees and your profit both come out of it:</li>
+    </ol>
+    <p class="formula">price = (cost per item + fixed fees per order) ÷ (1 − fee percentages − target margin)</p>
+    <p>Cost per item is steps 1 to 3 added together. The fee percentages and fixed fees depend on where you sell. Target margin is the share of the price you want left as profit after costs, your wage and fees.</p>
+
+    <h2>Why you divide instead of adding a markup</h2>
+    <p>Marketplace fees are a percentage of what the buyer pays. So if you add 30% to your cost, the fee is taken from that bigger number, and your 30% shrinks. Markup and margin are different things: a 30% markup on £5.00 gives £6.50, but £1.50 is only 23% of £6.50, and that's before any fees. Dividing by (1 − fees − margin) is the only way to land on the margin you asked for.</p>
+
+    <h2>Worked example: a bar of soap on Etsy UK</h2>
+    <p>Example figures for a batch of 10 bars. Use your own.</p>
+    <div class="card">
+      <table>
+        <tbody>
+          <tr><td>Oils and butters</td><td class="n">£9.40</td></tr>
+          <tr><td>Lye</td><td class="n">£0.60</td></tr>
+          <tr><td>Fragrance</td><td class="n">£3.00</td></tr>
+          <tr><td>Wrap and label, 40p × 10</td><td class="n">£4.00</td></tr>
+          <tr class="total"><td>Materials for the batch</td><td class="n">£17.00</td></tr>
+          <tr><td>Materials per bar (÷ 10)</td><td class="n">£1.70</td></tr>
+          <tr><td>Your time: 2 hours at £15/hour, ÷ 10 (12 minutes a bar)</td><td class="n">£3.00</td></tr>
+          <tr><td>Overhead share per bar</td><td class="n">£0.30</td></tr>
+          <tr class="total"><td>Cost per bar</td><td class="n">£5.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Now the fees. A UK Etsy seller pays 6.5% transaction, 4% + £0.20 processing and a 0.48% Regulatory Operating fee, and without a VAT ID Etsy adds 20% VAT on those fees. (All rates, with Etsy's source pages, are in our <a href="etsy-fees-uk.html">Etsy fees UK breakdown</a>.) With postage built into the price and no VAT ID:</p>
+    <p class="formula">fee percentages = (6.5% + 4% + 0.48%) × 1.2 = 13.18%<br>fixed fee = £0.20 × 1.2 = £0.24</p>
+    <p>For a 30% margin:</p>
+    <p class="formula">(£5.00 + £0.24) ÷ (1 − 0.1318 − 0.30) = £5.24 ÷ 0.5682 = <strong>£9.22</strong></p>
+    <p>Round up to <strong>£9.50</strong>. At £9.50 the fees are £1.49 and you keep <strong class="good">£3.01 a bar, about 32%</strong>, on top of your £15 an hour. The listing fee (0.20 USD, converted, plus VAT) is left out here; it's charged when you list or renew, and the rounding up covers it.</p>
+
+    <h2>Three prices, side by side</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Price</th><th class="n">Etsy fees</th><th class="n">Profit per bar</th><th class="n">You earn per hour</th></tr></thead>
+        <tbody>
+          <tr><td>£5.10 (materials × 3)</td><td class="n">£0.91</td><td class="n bad">−£0.81</td><td class="n">£10.94</td></tr>
+          <tr><td>£6.50 (cost + 30% markup)</td><td class="n">£1.10</td><td class="n">£0.40</td><td class="n">£17.02</td></tr>
+          <tr><td>£9.50 (solved for 30%)</td><td class="n">£1.49</td><td class="n good">£3.01</td><td class="n">£30.04</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>"You earn per hour" is your £3.00 wage plus the profit, for 12 minutes of hands-on work, scaled to an hour. At materials × 3 the bar loses 81p, so your £15 an hour quietly becomes £10.94. It also ignores the time spent photographing, listing, packing and answering messages, so the real hourly figure is lower in every row.</p>
+
+    <h2>Check the answer against the market</h2>
+    <p>The formula tells you the lowest price that pays you properly. It doesn't tell you what buyers will pay. If similar items sell well above your number, you have room. If your number is well above what sells, look at the inputs before you cut the price: a cheaper supplier, a bigger batch, less time per item, or a smaller margin on the item that brings people in.</p>
+    <p>When a supply price changes, every product that uses it changes too. That is the part a spreadsheet makes tedious. Tallymade keeps your supplies and recipes, re-prices every product when a cost changes, and shows the price for Etsy, card readers or cash, with what you earn per hour. It's free to start on iPhone and Android.</p>
+    <div class="stores">
+      <a class="btn" href="https://apps.apple.com/gb/app/tallymade-handmade-pricing/id6823324719">Download on the App Store</a>
+      <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade">Get it on Google Play</a>
+    </div>
+    <p class="note">Soap figures are examples. Etsy UK rates from Etsy's Help Centre, checked 11 November 2026; see the <a href="etsy-fees-uk.html">fee breakdown</a> for each source. Pounds are rounded to the penny. This is a pricing guide, not tax or accounting advice. Tallymade is not affiliated with Etsy.</p>
+  </article>
+  </main>
+
+  <footer>
+    <a href="./">Home</a><a href="etsy-fees-uk.html">Etsy fees UK</a><a href="etsy-candle-pricing-example.html">Candle example</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <span>© 2026 Prime Quantum Studios</span>
+  </footer>
+</div>
+</body>
+</html>
