@@ -104,6 +104,65 @@
     steps.forEach(function (s) { ho.observe(s); });
   }
 
+  // ---------- Free price check: shows only the result, never the working ----------
+  // Fee rates mirror the app's built-in presets (src/core/channels.ts, checked Oct–Nov 2026).
+  var PC = {
+    'etsy-uk': { c: 'GBP', p: 13.176, f: 0.42 },
+    'etsy-us': { c: 'USD', p: 9.5, f: 0.45 },
+    'square-uk': { c: 'GBP', p: 1.75, f: 0 },
+    'square-us': { c: 'USD', p: 2.6, f: 0.15 },
+    'cash-gbp': { c: 'GBP', p: 0, f: 0 },
+    'cash-usd': { c: 'USD', p: 0, f: 0 }
+  };
+  var pcForm = $('#pcheck');
+  if (pcForm) {
+    var num = function (id) {
+      var raw = String($(id).value).trim();
+      if (raw === '' || /-/.test(raw)) return NaN;
+      var v = /^\d{1,3}(,\d{3})+(\.\d+)?$/.test(raw) ? raw.replace(/,/g, '') : raw.replace(',', '.');
+      v = v.replace(/[^0-9.]/g, '');
+      return v === '' ? NaN : parseFloat(v);
+    };
+    var fmts = {
+      GBP: new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }),
+      USD: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+    };
+    var pcRun = function () {
+      var ch = PC[$('#pc-ch').value] || PC['etsy-uk'], f = fmts[ch.c];
+      $$('[data-cur]', pcForm).forEach(function (el) { el.textContent = ch.c === 'GBP' ? '£' : '$'; });
+      var unit = ch.c === 'GBP' ? 'pounds' : 'dollars';
+      $('#pc-price').setAttribute('aria-label', 'Your price, one piece, in ' + unit);
+      $('#pc-sup').setAttribute('aria-label', 'Supplies for one piece, in ' + unit);
+      var price = num('#pc-price'), sup = num('#pc-sup'), min = num('#pc-min');
+      var ready = price > 0 && sup >= 0 && min > 0;
+      $('[data-pc=empty]', pcForm).hidden = ready;
+      $('[data-pc=done]', pcForm).hidden = !ready;
+      pcForm.classList.toggle('loss', false);
+      pcForm.classList.toggle('low', false);
+      if (!ready) { $('#pc-say').textContent = ''; return; }
+      var keep = price - (price * ch.p / 100 + ch.f) - sup;
+      var hour = keep / (min / 60);
+      tween($('#pc-keep'), keep, function (v) { return f.format(v); });
+      if (keep < 0) { $('#pc-hour').setAttribute('data-v', 0); $('#pc-hour').textContent = f.format(0); } else tween($('#pc-hour'), hour, function (v) { return f.format(v); });
+      var say = $('#pc-say');
+      if (keep < 0) {
+        pcForm.classList.toggle('loss', true);
+        say.textContent = 'At this price you lose ' + f.format(-keep) + ' on every one you sell.';
+      } else if (keep < price * 0.15) {
+        pcForm.classList.toggle('low', true);
+        say.textContent = 'You keep ' + f.format(keep) + ' a piece. Fees and supplies take most of this sale. Is ' + f.format(hour) + ' an hour what you want to pay yourself?';
+      } else {
+        say.textContent = 'You keep ' + f.format(keep) + ' a piece. Is ' + f.format(hour) + ' an hour what you want to pay yourself?';
+      }
+    };
+    var pcT, pcQ = function () { clearTimeout(pcT); pcT = setTimeout(pcRun, 400); };
+    ['#pc-ch', '#pc-price', '#pc-sup', '#pc-min'].forEach(function (id) {
+      $(id).addEventListener('input', pcQ);
+      $(id).addEventListener('change', pcRun);
+    });
+    pcRun();
+  }
+
   // ---------- FAQ: smooth open and close ----------
   $$('.faq details').forEach(function (d) {
     var s = d.querySelector('summary'), a = d.querySelector('.ans');

@@ -288,3 +288,35 @@ footer .legal{margin-top:26px;font-size:.78rem;color:var(--ink-faint);max-width:
   .js .chip{opacity:1;transform:none}
   .hero h1 .hl::after{transform:none}
 }
+
+/* Free price check */
+.pcheck{box-sizing:border-box;width:100%;max-width:760px;margin:8px auto 0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:24px}
+.pc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc-f{min-width:0;display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem;color:var(--ink)}
+.pc-f small{font-weight:400;color:var(--ink-faint);font-size:.8rem}
+.pc-wide{grid-column:1/-1}
+.pc-f select,.pc-in{width:100%;box-sizing:border-box;background:var(--paper);border:1.5px solid #8F8473;border-radius:12px;font:500 1rem var(--body);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.pc-f select{padding:12px}
+.pc-in{display:flex;align-items:center;padding:0 12px}
+.pc-in i{font-style:normal;color:var(--ink-soft)}
+.pc-in .suf{margin-left:4px}
+.pc-in input{flex:1;min-width:0;width:100%;border:0;background:transparent;font:600 1.1rem var(--body);color:var(--ink);padding:12px 6px;outline:none}
+.pc-in:focus-within,.pc-f select:focus{border-color:var(--olive);box-shadow:0 0 0 3px var(--olive-soft);outline:none}
+.pc-out{margin-top:20px;min-height:118px}
+.pc-hint{color:var(--ink-faint);text-align:center;padding:28px 0;margin:0}
+.pc-res[data-pc=done]{display:grid;grid-template-columns:1fr 1fr;gap:14px;animation:pcin .45s var(--ease)}
+.pc-res[hidden]{display:none}
+.pc-big{background:var(--profit-soft);border-radius:var(--r-md);padding:14px 16px;display:flex;flex-direction:column;gap:2px;transition:background .4s}
+.pc-big span{font-size:.85rem;color:var(--ink-soft)}
+.pc-big b{font:700 2rem/1.1 var(--display);color:var(--profit);overflow-wrap:anywhere;transition:color .4s}
+.pcheck.loss .pc-big{background:var(--loss-soft)}.pcheck.loss .pc-big b{color:var(--loss)}
+.pcheck.low .pc-big{background:var(--warn-soft)}.pcheck.low .pc-big b{color:var(--warn)}
+.pc-say{margin:12px 0 0;font-weight:500}
+.pc-note{margin:16px 0 0;font-size:.8rem;color:var(--ink-faint)}
+.pc-next{max-width:640px;margin:22px auto 0;text-align:center}
+@keyframes pcin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:640px){.pcheck{padding:18px}.pc-grid{grid-template-columns:1fr}.pc-res[data-pc=done]{grid-template-columns:1fr}.pc-big b{font-size:1.7rem}}
+@media (prefers-reduced-motion:reduce){.pc-res[data-pc=done]{animation:none}}
+
+/* Stop decorative art from causing sideways scroll on phones */
+html,body{overflow-x:clip}

@@ -113,13 +113,41 @@
   <section id="try" aria-labelledby="try-h">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow rv">Your price</span>
-        <h2 id="try-h" class="rv d1">What should your price be?</h2>
-        <p class="lead rv d2">It depends on what your supplies cost, how long each batch takes you and where you sell. The example candle needed $11, not $8; yours will land somewhere else. Tallymade works it out for your own products, free for your first 3.</p>
+        <span class="eyebrow rv">Free price check</span>
+        <h2 id="try-h" class="rv d1">What does one piece really pay you?</h2>
+        <p class="lead rv d2">Three numbers, no sign-up. Nothing you type leaves this page.</p>
       </div>
-      <div class="badges rv d3" data-badges style="justify-content:center">
-        <a class="as" href="https://apps.apple.com/app/id6823324719"><img src="assets/appstore.svg" alt="Download on the App Store" width="156" height="52" loading="lazy"></a>
-        <a class="gp" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade&amp;referrer=utm_source%3Dtallymade.app%26utm_medium%3Dwebsite"><img src="assets/gplay.png" alt="Get it on Google Play" width="196" height="76" loading="lazy"></a>
+      <form class="pcheck rv d2" id="pcheck" novalidate onsubmit="return false">
+        <div class="pc-grid">
+          <label class="pc-f pc-wide"><span>Where you sell it</span>
+            <select id="pc-ch">
+              <option value="etsy-uk">Etsy (UK seller)</option>
+              <option value="etsy-us">Etsy (US seller)</option>
+              <option value="square-uk">Square card reader (UK, in person)</option>
+              <option value="square-us">Square card reader (US, in person)</option>
+              <option value="cash-gbp">Cash, no fees (£)</option>
+              <option value="cash-usd">Cash, no fees ($)</option>
+            </select></label>
+          <label class="pc-f"><span>Your price, one piece</span><div class="pc-in"><i data-cur aria-hidden="true">£</i><input id="pc-price" aria-label="Your price, one piece, in pounds" inputmode="decimal" autocomplete="off" placeholder="12.00"></div></label>
+          <label class="pc-f"><span>Supplies for one piece</span><div class="pc-in"><i data-cur aria-hidden="true">£</i><input id="pc-sup" aria-label="Supplies for one piece, in pounds" aria-describedby="pc-sup-h" inputmode="decimal" autocomplete="off" placeholder="4.50"></div><small id="pc-sup-h">wax, jar, wick, scent, label, box</small></label>
+          <label class="pc-f"><span>Your time for one piece</span><div class="pc-in"><input id="pc-min" aria-label="Your time for one piece, in minutes" aria-describedby="pc-min-h" inputmode="decimal" autocomplete="off" placeholder="20"><i class="suf" aria-hidden="true">min</i></div><small id="pc-min-h">making, packing, listing</small></label>
+        </div>
+        <div class="pc-out">
+          <div class="pc-res" data-pc="empty"><p class="pc-hint">Fill in all three boxes (time must be more than 0) to see what you keep.</p></div>
+          <div class="pc-res" data-pc="done" hidden>
+            <div class="pc-big"><span>You keep</span><b id="pc-keep" class="tnum">£0.00</b><span>a piece</span></div>
+            <div class="pc-big"><span>Your time earns</span><b id="pc-hour" class="tnum">£0.00</b><span>an hour</span></div>
+          </div>
+          <p class="pc-say" id="pc-say" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <p class="pc-note">Before tax, after the selling fees and your supplies. It leaves out postage, ads and running costs like electricity, so the real figure is usually lower. Etsy UK includes 20% VAT on Etsy's fees, as charged to sellers who are not VAT registered. Fee rates: Etsy and Square's published rates, checked October and November 2026.</p>
+      </form>
+      <div class="pc-next rv d3">
+        <p><b>Is that enough?</b> Tallymade tells you the price that pays you what you want, for every product, and updates them all when your supplies cost more. Free for your first 3 products.</p>
+        <div class="badges" data-badges style="justify-content:center">
+          <a class="as" href="https://apps.apple.com/app/id6823324719"><img src="assets/appstore.svg" alt="Download on the App Store" width="156" height="52" loading="lazy"></a>
+          <a class="gp" href="https://play.google.com/store/apps/details?id=com.primequantumstudios.tallymade&amp;referrer=utm_source%3Dtallymade.app%26utm_medium%3Dpricecheck"><img src="assets/gplay.png" alt="Get it on Google Play" width="196" height="76" loading="lazy"></a>
+        </div>
       </div>
     </div>
   </section>
